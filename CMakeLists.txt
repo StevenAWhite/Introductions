@@ -1,4 +1,4 @@
-project(SWIG_Demonstration LANGUAGES CXX CSharp)
+project(SWIG_Demonstration LANGUAGES CXX )
 cmake_minimum_required(VERSION 3.0)
 
 add_library(example SHARED example.cpp)
