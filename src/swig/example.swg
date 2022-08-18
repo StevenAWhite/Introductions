@@ -8,4 +8,4 @@
 
 %nspace example;
 
-%include "example.h"
+%include "../cpp/example.h"
