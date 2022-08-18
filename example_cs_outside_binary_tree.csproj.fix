@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{11D2F4A6-FCAE-34E3-85F8-5C212054FC41}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>example_cs_outside_binary_tree</ProjectName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+    <ManagedAssembly>true</ManagedAssembly>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <OutputPath>D:\remotes\github\Introductions\build-msvc17\src\Debug\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <PlatformToolset>v143</PlatformToolset>
+    <AssemblyName>example_cs_outside_binary_tree</AssemblyName>
+    <StartAction>Program</StartAction>
+    <StartProgram>D:\remotes\github\Introductions\build-msvc17\src\Debug\example_cs_outside_binary_tree.exe</StartProgram>
+    <DebugType>full</DebugType>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <Optimize>false</Optimize>
+    <WarningLevel>3</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <OutputPath>D:\remotes\github\Introductions\build-msvc17\src\Release\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <PlatformToolset>v143</PlatformToolset>
+    <AssemblyName>example_cs_outside_binary_tree</AssemblyName>
+    <StartAction>Program</StartAction>
+    <StartProgram>D:\remotes\github\Introductions\build-msvc17\src\Release\example_cs_outside_binary_tree.exe</StartProgram>
+    <DebugType>none</DebugType>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>queue</ErrorReport>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <OutputPath>D:\remotes\github\Introductions\build-msvc17\src\MinSizeRel\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <PlatformToolset>v143</PlatformToolset>
+    <AssemblyName>example_cs_outside_binary_tree</AssemblyName>
+    <StartAction>Program</StartAction>
+    <StartProgram>D:\remotes\github\Introductions\build-msvc17\src\MinSizeRel\example_cs_outside_binary_tree.exe</StartProgram>
+    <DebugType>none</DebugType>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <OutputPath>D:\remotes\github\Introductions\build-msvc17\src\RelWithDebInfo\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <PlatformToolset>v143</PlatformToolset>
+    <AssemblyName>example_cs_outside_binary_tree</AssemblyName>
+    <StartAction>Program</StartAction>
+    <StartProgram>D:\remotes\github\Introductions\build-msvc17\src\RelWithDebInfo\example_cs_outside_binary_tree.exe</StartProgram>
+    <DebugType>full</DebugType>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.CSharp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.CSharp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemGroup>
+    <None Include="D:\remotes\github\Introductions\src\swig\example.swg">
+      <Link>swig\example.swg</Link>
+    </None>
+  </ItemGroup>
+  <Target Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"
+    Name="CustomCommand_Debug_8f942dfb8db1f65604ee327e943795db"
+    Inputs="D:/remotes/github/Introductions/src/swig/example.swg"
+    Outputs="D:\remotes\github\Introductions\build-msvc17\src\generated\exampleCSHARP_wrap.cxx;D:\remotes\github\Introductions\build-msvc17\bindings\csharp\example.cs;D:\remotes\github\Introductions\build-msvc17\bindings\csharp\examplePINVOKE.cs">
+    <Exec Command="echo Swig compile swig/example.swg for csharp" />
+    <Exec Command="setlocal&#10;D:\Programs\CMake\bin\cmake.exe -E make_directory D:/remotes/github/Introductions/build-msvc17/src/CMakeFiles/example_swig.dir D:/remotes/github/Introductions/build-msvc17/bindings/csharp/ D:/remotes/github/Introductions/build-msvc17/src/generated&#10;if %errorlevel% neq 0 goto :cmEnd&#10;D:\Programs\CMake\bin\cmake.exe -E env SWIG_LIB=D:/remotes/sed-stash/external/windows-vc17-amd64/bin/Lib D:/remotes/sed-stash/external/windows-vc17-amd64/bin/swig.exe -csharp -outdir D:/remotes/github/Introductions/build-msvc17/bindings/csharp/ -c++ -dllimport example_swig -o D:/remotes/github/Introductions/build-msvc17/src/generated/exampleCSHARP_wrap.cxx D:/remotes/github/Introductions/src/swig/example.swg&#10;if %errorlevel% neq 0 goto :cmEnd&#10;:cmEnd&#10;endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone&#10;:cmErrorLevel&#10;exit /b %1&#10;:cmDone&#10;if %errorlevel% neq 0 goto :VCEnd&#10;:VCEnd" />
+  </Target>
+  <Target Condition="'$(Configuration)|$(Platform)'=='Release|x64'"
+    Name="CustomCommand_Release_8f942dfb8db1f65604ee327e943795db"
+    Inputs="D:/remotes/github/Introductions/src/swig/example.swg"
+    Outputs="D:\remotes\github\Introductions\build-msvc17\src\generated\exampleCSHARP_wrap.cxx;D:\remotes\github\Introductions\build-msvc17\bindings\csharp\example.cs;D:\remotes\github\Introductions\build-msvc17\bindings\csharp\examplePINVOKE.cs">
+    <Exec Command="echo Swig compile swig/example.swg for csharp" />
+    <Exec Command="setlocal&#10;D:\Programs\CMake\bin\cmake.exe -E make_directory D:/remotes/github/Introductions/build-msvc17/src/CMakeFiles/example_swig.dir D:/remotes/github/Introductions/build-msvc17/bindings/csharp/ D:/remotes/github/Introductions/build-msvc17/src/generated&#10;if %errorlevel% neq 0 goto :cmEnd&#10;D:\Programs\CMake\bin\cmake.exe -E env SWIG_LIB=D:/remotes/sed-stash/external/windows-vc17-amd64/bin/Lib D:/remotes/sed-stash/external/windows-vc17-amd64/bin/swig.exe -csharp -outdir D:/remotes/github/Introductions/build-msvc17/bindings/csharp/ -c++ -dllimport example_swig -o D:/remotes/github/Introductions/build-msvc17/src/generated/exampleCSHARP_wrap.cxx D:/remotes/github/Introductions/src/swig/example.swg&#10;if %errorlevel% neq 0 goto :cmEnd&#10;:cmEnd&#10;endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone&#10;:cmErrorLevel&#10;exit /b %1&#10;:cmDone&#10;if %errorlevel% neq 0 goto :VCEnd&#10;:VCEnd" />
+  </Target>
+  <Target Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"
+    Name="CustomCommand_MinSizeRel_8f942dfb8db1f65604ee327e943795db"
+    Inputs="D:/remotes/github/Introductions/src/swig/example.swg"
+    Outputs="D:\remotes\github\Introductions\build-msvc17\src\generated\exampleCSHARP_wrap.cxx;D:\remotes\github\Introductions\build-msvc17\bindings\csharp\example.cs;D:\remotes\github\Introductions\build-msvc17\bindings\csharp\examplePINVOKE.cs">
+    <Exec Command="echo Swig compile swig/example.swg for csharp" />
+    <Exec Command="setlocal&#10;D:\Programs\CMake\bin\cmake.exe -E make_directory D:/remotes/github/Introductions/build-msvc17/src/CMakeFiles/example_swig.dir D:/remotes/github/Introductions/build-msvc17/bindings/csharp/ D:/remotes/github/Introductions/build-msvc17/src/generated&#10;if %errorlevel% neq 0 goto :cmEnd&#10;D:\Programs\CMake\bin\cmake.exe -E env SWIG_LIB=D:/remotes/sed-stash/external/windows-vc17-amd64/bin/Lib D:/remotes/sed-stash/external/windows-vc17-amd64/bin/swig.exe -csharp -outdir D:/remotes/github/Introductions/build-msvc17/bindings/csharp/ -c++ -dllimport example_swig -o D:/remotes/github/Introductions/build-msvc17/src/generated/exampleCSHARP_wrap.cxx D:/remotes/github/Introductions/src/swig/example.swg&#10;if %errorlevel% neq 0 goto :cmEnd&#10;:cmEnd&#10;endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone&#10;:cmErrorLevel&#10;exit /b %1&#10;:cmDone&#10;if %errorlevel% neq 0 goto :VCEnd&#10;:VCEnd" />
+  </Target>
+  <Target Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"
+    Name="CustomCommand_RelWithDebInfo_8f942dfb8db1f65604ee327e943795db"
+    Inputs="D:/remotes/github/Introductions/src/swig/example.swg"
+    Outputs="D:\remotes\github\Introductions\build-msvc17\src\generated\exampleCSHARP_wrap.cxx;D:\remotes\github\Introductions\build-msvc17\bindings\csharp\example.cs;D:\remotes\github\Introductions\build-msvc17\bindings\csharp\examplePINVOKE.cs">
+    <Exec Command="echo Swig compile swig/example.swg for csharp" />
+    <Exec Command="setlocal&#10;D:\Programs\CMake\bin\cmake.exe -E make_directory D:/remotes/github/Introductions/build-msvc17/src/CMakeFiles/example_swig.dir D:/remotes/github/Introductions/build-msvc17/bindings/csharp/ D:/remotes/github/Introductions/build-msvc17/src/generated&#10;if %errorlevel% neq 0 goto :cmEnd&#10;D:\Programs\CMake\bin\cmake.exe -E env SWIG_LIB=D:/remotes/sed-stash/external/windows-vc17-amd64/bin/Lib D:/remotes/sed-stash/external/windows-vc17-amd64/bin/swig.exe -csharp -outdir D:/remotes/github/Introductions/build-msvc17/bindings/csharp/ -c++ -dllimport example_swig -o D:/remotes/github/Introductions/build-msvc17/src/generated/exampleCSHARP_wrap.cxx D:/remotes/github/Introductions/src/swig/example.swg&#10;if %errorlevel% neq 0 goto :cmEnd&#10;:cmEnd&#10;endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone&#10;:cmErrorLevel&#10;exit /b %1&#10;:cmDone&#10;if %errorlevel% neq 0 goto :VCEnd&#10;:VCEnd" />
+  </Target>
+  <ItemGroup>
+    <None Include="D:\remotes\github\Introductions\src\CMakeLists.txt">
+      <Link>CMakeLists.txt</Link>
+    </None>
+  </ItemGroup>
+  <Target Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"
+    Name="CustomCommand_Debug_02fe70f610b3eb0b94f7e16ef942fc97"
+    Inputs="D:/remotes/github/Introductions/src/CMakeLists.txt;D:\Programs\CMake\share\cmake-3.24\Modules\CMakeCSharpInformation.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\CSharpUtilities.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\FindPackageHandleStandardArgs.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\FindPackageMessage.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\FindSWIG.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\UseSWIG.cmake;D:\remotes\github\Introductions\build-msvc17\CMakeFiles\3.24.1\CMakeCSharpCompiler.cmake;D:\remotes\github\Introductions\build-msvc17\CMakeFiles\cmake.verify_globs"
+    Outputs="D:\remotes\github\Introductions\build-msvc17\src\CMakeFiles\generate.stamp">
+    <Exec Command="echo Building Custom Rule D:/remotes/github/Introductions/src/CMakeLists.txt" />
+    <Exec Command="setlocal&#10;D:\Programs\CMake\bin\cmake.exe -SD:/remotes/github/Introductions -BD:/remotes/github/Introductions/build-msvc17 --check-stamp-file D:/remotes/github/Introductions/build-msvc17/src/CMakeFiles/generate.stamp&#10;if %errorlevel% neq 0 goto :cmEnd&#10;:cmEnd&#10;endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone&#10;:cmErrorLevel&#10;exit /b %1&#10;:cmDone&#10;if %errorlevel% neq 0 goto :VCEnd&#10;:VCEnd" />
+  </Target>
+  <Target Condition="'$(Configuration)|$(Platform)'=='Release|x64'"
+    Name="CustomCommand_Release_02fe70f610b3eb0b94f7e16ef942fc97"
+    Inputs="D:/remotes/github/Introductions/src/CMakeLists.txt;D:\Programs\CMake\share\cmake-3.24\Modules\CMakeCSharpInformation.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\CSharpUtilities.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\FindPackageHandleStandardArgs.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\FindPackageMessage.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\FindSWIG.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\UseSWIG.cmake;D:\remotes\github\Introductions\build-msvc17\CMakeFiles\3.24.1\CMakeCSharpCompiler.cmake;D:\remotes\github\Introductions\build-msvc17\CMakeFiles\cmake.verify_globs"
+    Outputs="D:\remotes\github\Introductions\build-msvc17\src\CMakeFiles\generate.stamp">
+    <Exec Command="echo Building Custom Rule D:/remotes/github/Introductions/src/CMakeLists.txt" />
+    <Exec Command="setlocal&#10;D:\Programs\CMake\bin\cmake.exe -SD:/remotes/github/Introductions -BD:/remotes/github/Introductions/build-msvc17 --check-stamp-file D:/remotes/github/Introductions/build-msvc17/src/CMakeFiles/generate.stamp&#10;if %errorlevel% neq 0 goto :cmEnd&#10;:cmEnd&#10;endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone&#10;:cmErrorLevel&#10;exit /b %1&#10;:cmDone&#10;if %errorlevel% neq 0 goto :VCEnd&#10;:VCEnd" />
+  </Target>
+  <Target Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"
+    Name="CustomCommand_MinSizeRel_02fe70f610b3eb0b94f7e16ef942fc97"
+    Inputs="D:/remotes/github/Introductions/src/CMakeLists.txt;D:\Programs\CMake\share\cmake-3.24\Modules\CMakeCSharpInformation.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\CSharpUtilities.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\FindPackageHandleStandardArgs.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\FindPackageMessage.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\FindSWIG.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\UseSWIG.cmake;D:\remotes\github\Introductions\build-msvc17\CMakeFiles\3.24.1\CMakeCSharpCompiler.cmake;D:\remotes\github\Introductions\build-msvc17\CMakeFiles\cmake.verify_globs"
+    Outputs="D:\remotes\github\Introductions\build-msvc17\src\CMakeFiles\generate.stamp">
+    <Exec Command="echo Building Custom Rule D:/remotes/github/Introductions/src/CMakeLists.txt" />
+    <Exec Command="setlocal&#10;D:\Programs\CMake\bin\cmake.exe -SD:/remotes/github/Introductions -BD:/remotes/github/Introductions/build-msvc17 --check-stamp-file D:/remotes/github/Introductions/build-msvc17/src/CMakeFiles/generate.stamp&#10;if %errorlevel% neq 0 goto :cmEnd&#10;:cmEnd&#10;endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone&#10;:cmErrorLevel&#10;exit /b %1&#10;:cmDone&#10;if %errorlevel% neq 0 goto :VCEnd&#10;:VCEnd" />
+  </Target>
+  <Target Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"
+    Name="CustomCommand_RelWithDebInfo_02fe70f610b3eb0b94f7e16ef942fc97"
+    Inputs="D:/remotes/github/Introductions/src/CMakeLists.txt;D:\Programs\CMake\share\cmake-3.24\Modules\CMakeCSharpInformation.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\CSharpUtilities.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\FindPackageHandleStandardArgs.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\FindPackageMessage.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\FindSWIG.cmake;D:\Programs\CMake\share\cmake-3.24\Modules\UseSWIG.cmake;D:\remotes\github\Introductions\build-msvc17\CMakeFiles\3.24.1\CMakeCSharpCompiler.cmake;D:\remotes\github\Introductions\build-msvc17\CMakeFiles\cmake.verify_globs"
+    Outputs="D:\remotes\github\Introductions\build-msvc17\src\CMakeFiles\generate.stamp">
+    <Exec Command="echo Building Custom Rule D:/remotes/github/Introductions/src/CMakeLists.txt" />
+    <Exec Command="setlocal&#10;D:\Programs\CMake\bin\cmake.exe -SD:/remotes/github/Introductions -BD:/remotes/github/Introductions/build-msvc17 --check-stamp-file D:/remotes/github/Introductions/build-msvc17/src/CMakeFiles/generate.stamp&#10;if %errorlevel% neq 0 goto :cmEnd&#10;:cmEnd&#10;endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone&#10;:cmErrorLevel&#10;exit /b %1&#10;:cmDone&#10;if %errorlevel% neq 0 goto :VCEnd&#10;:VCEnd" />
+  </Target>
+  <ItemGroup>
+    <Compile Include="D:\remotes\github\Introductions\build-msvc17\bindings\csharp\example.cs">
+      <Link>example.cs</Link>
+    </Compile>
+    <Compile Include="D:\remotes\github\Introductions\build-msvc17\bindings\csharp\examplePINVOKE.cs">
+      <Link>examplePINVOKE.cs</Link>
+    </Compile>
+    <Compile Include="D:\remotes\github\Introductions\src\csharp\CsharpSwigExample.cs">
+      <Link>csharp\CsharpSwigExample.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\remotes\github\Introductions\build-msvc17\ZERO_CHECK.vcxproj">
+      <Project>{345948C7-A9A6-321F-8DD1-6D58189091A5}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'MinSizeRel'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'RelWithDebInfo'">
+  </PropertyGroup>
+  <PropertyGroup>
+    <BuildDependsOn>
+      CustomCommand_Debug_02fe70f610b3eb0b94f7e16ef942fc97;
+      CustomCommand_Debug_8f942dfb8db1f65604ee327e943795db;
+      CustomCommand_MinSizeRel_02fe70f610b3eb0b94f7e16ef942fc97;
+      CustomCommand_MinSizeRel_8f942dfb8db1f65604ee327e943795db;
+      CustomCommand_RelWithDebInfo_02fe70f610b3eb0b94f7e16ef942fc97;
+      CustomCommand_RelWithDebInfo_8f942dfb8db1f65604ee327e943795db;
+      CustomCommand_Release_02fe70f610b3eb0b94f7e16ef942fc97;
+      CustomCommand_Release_8f942dfb8db1f65604ee327e943795db;
+      $(BuildDependsOn)
+</BuildDependsOn>
+  </PropertyGroup>
+</Project>
